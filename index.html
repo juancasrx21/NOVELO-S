@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novelo Luxe | Luxury Fashion & Accessories</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="announcement">
+                    <p>Complimentary shipping on all orders over $500</p>
+                </div>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-container">
+                        <a href="index.html">
+                            <img src="images/logo.jpeg" alt="Novelo Luxe Logo" class="logo">
+                        </a>
+                    </div>
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="index.html" class="active">Home</a></li>
+                            <li class="dropdown">
+                                <a href="pages/women/women.html" class="dropdown-toggle">Women</a>
+                                <div class="dropdown-content">
+                                    <a href="pages/women/clothing.html">Clothing</a>
+                                    <a href="pages/women/shoes.html">Shoes</a>
+                                    <a href="pages/women/handbags.html">Handbags</a>
+                                    <a href="pages/women/jewelry.html">Jewelry</a>
+                                </div>
+                            </li>
+                            <li class="dropdown">
+                                <a href="pages/men/men.html" class="dropdown-toggle">Men</a>
+                                <div class="dropdown-content">
+                                    <a href="pages/men/clothing.html">Clothing</a>
+                                    <a href="pages/men/shoes.html">Shoes</a>
+                                    <a href="pages/men/accessories.html">Accessories</a>
+                                    <a href="pages/men/watches.html">Watches</a>
+                                </div>
+                            </li>
+                            <li class="dropdown">
+                                <a href="pages/accessories/accessories.html" class="dropdown-toggle">Accessories</a>
+                                <div class="dropdown-content">
+                                    <a href="pages/accessories/jewelry.html">Jewelry</a>
+                                    <a href="pages/accessories/watches.html">Watches</a>
+                                    <a href="pages/accessories/scarves-belts.html">Scarves & Belts</a>
+                                </div>
+                            </li>
+                            <li><a href="pages/limited-edition/limited-edition.html">Limited Edition</a></li>
+                            <li><a href="pages/about.html">About</a></li>
+                            <li><a href="pages/contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <div class="header-actions">
+                        <a href="#" class="icon-link search-toggle"><i class="fas fa-search"></i></a>
+                        <a href="#" class="icon-link"><i class="fas fa-user"></i></a>
+                        <a href="pages/checkout/cart.html" class="icon-link cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+                    </div>
+                    <div class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="mobile-dropdown">
+                    <a href="pages/women/women.html" class="mobile-dropdown-toggle">Women <i class="fas fa-chevron-down"></i></a>
+                    <ul class="mobile-dropdown-content">
+                        <li><a href="pages/women/clothing.html">Clothing</a></li>
+                        <li><a href="pages/women/shoes.html">Shoes</a></li>
+                        <li><a href="pages/women/handbags.html">Handbags</a></li>
+                        <li><a href="pages/women/jewelry.html">Jewelry</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="pages/men/men.html" class="mobile-dropdown-toggle">Men <i class="fas fa-chevron-down"></i></a>
+                    <ul class="mobile-dropdown-content">
+                        <li><a href="pages/men/clothing.html">Clothing</a></li>
+                        <li><a href="pages/men/shoes.html">Shoes</a></li>
+                        <li><a href="pages/men/accessories.html">Accessories</a></li>
+                        <li><a href="pages/men/watches.html">Watches</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="pages/accessories/accessories.html" class="mobile-dropdown-toggle">Accessories <i class="fas fa-chevron-down"></i></a>
+                    <ul class="mobile-dropdown-content">
+                        <li><a href="pages/accessories/jewelry.html">Jewelry</a></li>
+                        <li><a href="pages/accessories/watches.html">Watches</a></li>
+                        <li><a href="pages/accessories/scarves-belts.html">Scarves & Belts</a></li>
+                    </ul>
+                </li>
+                <li><a href="pages/limited-edition/limited-edition.html">Limited Edition</a></li>
+                <li><a href="pages/about.html">About</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="search-overlay">
+            <div class="container">
+                <div class="search-container">
+                    <form class="search-form">
+                        <input type="text" placeholder="Search for products...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                    <button class="close-search"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <div class="hero-image" style="background-image: url('images/hero1.jpg')"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Timeless Elegance, Modern Luxury</h1>
+                        <p>Discover our curated collection of premium fashion and accessories</p>
+                        <div class="hero-buttons">
+                            <a href="pages/women/women.html" class="btn btn-primary">Shop Women</a>
+                            <a href="pages/men/men.html" class="btn btn-primary">Shop Men</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-image" style="background-image: url('images/hero2.jpg')"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Limited Edition Collection</h1>
+                        <p>Exclusive pieces crafted for the discerning connoisseur</p>
+                        <div class="hero-buttons">
+                            <a href="pages/limited-edition/limited-edition.html" class="btn btn-primary">Explore Collection</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-image" style="background-image: url('images/hero3.jpg')"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Personalized Shopping Experience</h1>
+                        <p>Our expert stylists are ready to assist with your unique needs</p>
+                        <div class="hero-buttons">
+                            <a href="pages/contact.html" class="btn btn-primary">Book Appointment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-controls">
+            <button class="hero-prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="hero-dots">
+                <span class="hero-dot active" data-slide="0"></span>
+                <span class="hero-dot" data-slide="1"></span>
+                <span class="hero-dot" data-slide="2"></span>
+            </div>
+            <button class="hero-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <section class="featured-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Curated Collections</h2>
+                <p>Explore our thoughtfully curated collections designed for the modern connoisseur</p>
+            </div>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="images/products/women-blouse.jpg" alt="Women's Collection">
+                    </div>
+                    <div class="category-info">
+                        <h3>Women's Collection</h3>
+                        <a href="pages/women/women.html" class="btn-text">Explore <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="images/products/men-suit.jpg" alt="Men's Collection">
+                    </div>
+                    <div class="category-info">
+                        <h3>Men's Collection</h3>
+                        <a href="pages/men/men.html" class="btn-text">Explore <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="images/products/bracelet.jpg" alt="Accessories">
+                    </div>
+                    <div class="category-info">
+                        <h3>Accessories</h3>
+                        <a href="pages/accessories/accessories.html" class="btn-text">Explore <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Pieces</h2>
+                <p>Discover our most coveted pieces, crafted with exceptional attention to detail</p>
+            </div>
+            <div class="product-tabs">
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="new-arrivals">New Arrivals</button>
+                    <button class="tab-btn" data-tab="best-sellers">Best Sellers</button>
+                    <button class="tab-btn" data-tab="limited-edition">Limited Edition</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="new-arrivals">
+                        <div class="product-slider">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="images/products/handbag.jpg" alt="Leather Handbag">
+                                    <div class="product-actions">
+                                        <button class="quick-view" title="Quick View"><i class="fas fa-eye"></i></button>
+                                        <button class="add-to-wishlist" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                                        <button class="add-to-cart" title="Add to Cart"><i class="fas fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <h3>Signature Leather Handbag</h3>
+                                    <p class="product-category">Women's Accessories</p>
+                                    <p class="product-price">$2,450</p>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="images/products/scarf3.jpg" alt="Silk Scarf">
+                                    <div class="product-actions">
+                                        <button class="quick-view" title="Quick View"><i class="fas fa-eye"></i></button>
+                                        <button class="add-to-wishlist" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                                        <button class="add-to-cart" title="Add to Cart"><i class="fas fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <h3>Hand-Painted Silk Scarf</h3>
+                                    <p class="product-category">Accessories</p>
+                                    <p class="product-price">$890</p>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="images/products/jacket.jpg" alt="Men's Leather Jacket">
+                                    <div class="limited-badge">Limited</div>
+                                    <div class="product-actions">
+                                        <button class="quick-view" title="Quick View"><i class="fas fa-eye"></i></button>
+                                        <button class="add-to-wishlist" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                                        <button class="add-to-cart" title="Add to Cart"><i class="fas fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <h3>Italian Leather Jacket</h3>
+                                    <p class="product-category">Men's Outerwear</p>
+                                    <p class="product-price">$3,200</p>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="images/products/bracelet.jpg" alt="Gold Bracelet">
+                                    <div class="product-actions">
+                                        <button class="quick-view" title="Quick View"><i class="fas fa-eye"></i></button>
+                                        <button class="add-to-wishlist" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                                        <button class="add-to-cart" title="Add to Cart"><i class="fas fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <h3>Gold-Plated Bracelet</h3>
+                                    <p class="product-category">Jewelry</p>
+                                    <p class="product-price">$780</p>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="images/products/watch3.jpg" alt="Designer Watch">
+                                    <div class="product-actions">
+                                        <button class="quick-view" title="Quick View"><i class="fas fa-eye"></i></button>
+                                        <button class="add-to-wishlist" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                                        <button class="add-to-cart" title="Add to Cart"><i class="fas fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <h3>Luxury Chronograph Watch</h3>
+                                    <p class="product-category">Men's Accessories</p>
+                                    <p class="product-price">$4,950</p>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="images/products/women-coat.jpg" alt="Evening Gown">
+                                    <div class="product-actions">
+                                        <button class="quick-view" title="Quick View"><i class="fas fa-eye"></i></button>
+                                        <button class="add-to-wishlist" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                                        <button class="add-to-cart" title="Add to Cart"><i class="fas fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <h3>Silk Evening Gown</h3>
+                                    <p class="product-category">Women's Clothing</p>
+                                    <p class="product-price">$3,850</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="best-sellers">
+                        <!-- Best Sellers content would go here -->
+                        <div class="product-slider">
+                            <!-- 6 product cards would go here -->
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="limited-edition">
+                        <!-- Limited Edition content would go here -->
+                        <div class="product-slider">
+                            <!-- 6 product cards would go here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all-container">
+                <a href="pages/accessories/accessories.html" class="btn btn-secondary">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="personalized-shopping">
+        <div class="container">
+            <div class="personalized-content">
+                <div class="personalized-text">
+                    <h2>Personalized Shopping Experience</h2>
+                    <p>At Novelo Luxe, we believe that luxury is personal. Our dedicated stylists are available to provide personalized recommendations and assistance tailored to your unique preferences and lifestyle.</p>
+                    <ul class="personalized-features">
+                        <li><i class="fas fa-check"></i> Private shopping appointments</li>
+                        <li><i class="fas fa-check"></i> Personal styling consultations</li>
+                        <li><i class="fas fa-check"></i> Custom alterations and monogramming</li>
+                        <li><i class="fas fa-check"></i> Exclusive access to limited collections</li>
+                    </ul>
+                    <a href="pages/contact.html" class="btn btn-primary">Book an Appointment</a>
+                </div>
+                <div class="personalized-image">
+                    <img src="images/personalized-shopping.jpg" alt="Personalized Shopping Experience">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="limited-edition">
+        <div class="container">
+            <div class="limited-header">
+                <h2>Limited Edition Collection</h2>
+                <p>Introducing our exclusive limited edition pieces, available for a short time only</p>
+            </div>
+            <div class="limited-showcase">
+                <div class="showcase-image">
+                    <img src="images/products/limited-watch.jpg" alt="Limited Edition Watch">
+                </div>
+                <div class="showcase-details">
+                    <h3>Artisan Crafted Timepiece</h3>
+                    <p>A masterpiece of horological excellence, this limited edition timepiece features hand-finished details and a movement crafted by master watchmakers. Only 50 pieces available worldwide.</p>
+                    <div class="availability-meter">
+                        <div class="availability-bar">
+                            <div class="availability-progress" style="width: 24%"></div>
+                        </div>
+                        <p class="availability">Only 12 pieces remaining</p>
+                    </div>
+                    <div class="showcase-price">$12,500</div>
+                    <a href="pages/limited-edition/limited-edition.html" class="btn btn-primary">Discover More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Client Testimonials</h2>
+                <p>Hear from our valued clients about their Novelo Luxe experience</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>The quality and craftsmanship of my Novelo Luxe handbag is exceptional. It's not just an accessory, but an investment piece that I'll cherish for years to come.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/neyyork.jpg" alt="Sophia Reynolds">
+                        </div>
+                        <div class="author-info">
+                            <p class="author-name">Sophia Reynolds</p>
+                            <p class="author-title">New York, NY</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>The personal shopping experience at Novelo Luxe transformed my wardrobe. Their attention to detail and understanding of my style preferences was impressive.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/london.jpg" alt="James Mitchell">
+                        </div>
+                        <div class="author-info">
+                            <p class="author-name">James Mitchell</p>
+                            <p class="author-title">London, UK</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>I purchased a limited edition watch from Novelo Luxe, and the entire experience from selection to delivery was flawless. The piece itself exceeds all expectations.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/milan.jpg" alt="Elena Cortez">
+                        </div>
+                        <div class="author-info">
+                            <p class="author-name">Elena Cortez</p>
+                            <p class="author-title">Milan, Italy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="testimonial-dot active" data-slide="0"></span>
+                    <span class="testimonial-dot" data-slide="1"></span>
+                    <span class="testimonial-dot" data-slide="2"></span>
+                </div>
+                <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Join Our Exclusive Circle</h2>
+                <p>Subscribe to receive updates on new collections, exclusive events, and personalized offers.</p>
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email Address" required>
+                        <button type="submit" class="btn btn-secondary">Subscribe</button>
+                    </div>
+                    <div class="privacy-note">
+                        <p>By subscribing, you agree to our <a href="pages/privacy.html">Privacy Policy</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.jpeg" alt="Novelo Luxe Logo" class="logo">
+                    <p>Explore the world with luxury</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Shop</h3>
+                        <ul>
+                            <li><a href="pages/women/women.html">Women's Fashion</a></li>
+                            <li><a href="pages/men/men.html">Men's Fashion</a></li>
+                            <li><a href="pages/accessories/accessories.html">Accessories</a></li>
+                            <li><a href="pages/limited-edition/limited-edition.html">Limited Edition</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="pages/about.html">Our Story</a></li>
+                            <li><a href="pages/about.html#craftsmanship">Craftsmanship</a></li>
+                            <li><a href="pages/about.html#sustainability">Sustainability</a></li>
+                            <li><a href="pages/about.html#press">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Customer Care</h3>
+                        <ul>
+                            <li><a href="pages/contact.html">Contact Us</a></li>
+                            <li><a href="pages/contact.html#shipping">Shipping & Returns</a></li>
+                            <li><a href="pages/contact.html#care">Care Guide</a></li>
+                            <li><a href="pages/contact.html#faq">FAQs</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Connect</h3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                        <div class="contact-info">
+                            <p><i class="fas fa-envelope"></i> contact@noveloluxe.com</p>
+                            <p><i class="fas fa-phone"></i> +1 (800) 555-LUXE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-apple-pay"></i>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 Novelo Luxe. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
