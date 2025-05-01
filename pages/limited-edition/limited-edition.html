@@ -6,6 +6,34 @@
     <title>Limited Edition | Novelo Luxe</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .video-advertisement .video-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 30px;
+        }
+
+        .video-advertisement video {
+            width: 100%;
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            gap: 20px;
+        }
+
+        .image-row div {
+            width: 48%;
+        }
+
+        .image-row img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -136,6 +164,15 @@
                     <p>Discover the craftsmanship behind our limited edition pieces</p>
                 </div>
             </div>
+            
+            <div class="image-row">
+                <div>
+                    <img src="../../images/products/watcha.jpg" alt="Limited Watch">
+                </div>
+                <div>
+                    <img src="../../images/products/watchb.jpg" alt="Limited Watch">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -223,78 +260,29 @@
                     <p>Join our exclusive program for early access to limited releases</p>
                 </div>
             </div>
-        </div>
-        
-    </section>
-    <section class="limited-products">
-        <div class="container">
             
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="../../images/products/limited-watch.jpg" alt="Artisan Timepiece">
-                        <div class="limited-badge">Only 12 Left</div>
-                        <div class="product-actions">
-                            <button class="quick-view"><i class="fas fa-eye"></i></button>
-                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                            <button class="add-to-cart" data-id="8" data-name="Artisan Crafted Timepiece" data-price="12500" data-image="../../images/products/limited-watch.jpg"><i class="fas fa-shopping-bag"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Artisan Crafted Timepiece</h3>
-                        <p class="product-price">$12,500</p>
-                    </div>
+            <div class="image-row">
+                <div>
+                    <img src="../../images/products/purse1.jpg" alt="Limited Jacket">
                 </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="../../images/products/limited-bag.jpg" alt="Limited Edition Handbag">
-                        <div class="limited-badge">Only 5 Left</div>
-                        <div class="product-actions">
-                            <button class="quick-view"><i class="fas fa-eye"></i></button>
-                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                            <button class="add-to-cart" data-id="9" data-name="Limited Edition Handbag" data-price="8500" data-image="../../images/products/limited-bag.jpg"><i class="fas fa-shopping-bag"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Limited Edition Handbag</h3>
-                        <p class="product-price">$8,500</p>
-                    </div>
+                <div>
+                    <img src="../../images/products/purse2.jpg" alt="Limited Jewelry">
                 </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="../../images/products/limited-jacket.jpg" alt="Exclusive Leather Jacket">
-                        <div class="limited-badge">Only 8 Left</div>
-                        <div class="product-actions">
-                            <button class="quick-view"><i class="fas fa-eye"></i></button>
-                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                            <button class="add-to-cart" data-id="10" data-name="Exclusive Leather Jacket" data-price="6800" data-image="../../images/products/limited-jacket.jpg"><i class="fas fa-shopping-bag"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Exclusive Leather Jacket</h3>
-                        <p class="product-price">$6,800</p>
-                    </div>
+                <div>
+                    <img src="../../images/products/purse3.jpg" alt="Limited Jewelry">
                 </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="../../images/products/limited-jewelry.jpg" alt="Rare Gemstone Necklace">
-                        <div class="limited-badge">Only 3 Left</div>
-                        <div class="product-actions">
-                            <button class="quick-view"><i class="fas fa-eye"></i></button>
-                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                            <button class="add-to-cart" data-id="11" data-name="Rare Gemstone Necklace" data-price="14200" data-image="../../images/products/limited-jewelry.jpg"><i class="fas fa-shopping-bag"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Rare Gemstone Necklace</h3>
-                        <p class="product-price">$14,200</p>
-                    </div>
+                <div>
+                    <img src="../../images/products/purse4.jpg" alt="Limited Jewelry">
+                </div>
+                <div>
+                    <img src="../../images/products/purse5.jpg" alt="Limited Jewelry">
+                </div>
+                <div>
+                    <img src="../../images/products/purse6.jpg" alt="Limited Jewelry">
                 </div>
             </div>
         </div>
     </section>
-
-    
 
     <section class="collectors-section">
         <div class="container">

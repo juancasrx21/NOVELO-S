@@ -6,6 +6,7 @@
     <title>Contact Novelo Luxe | Luxury Consultations</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="description" content="Connect with Novelo Luxe's luxury consultants for personalized service, boutique appointments, and customer care.">
 </head>
 <body>
     <header>
@@ -116,98 +117,195 @@
         </div>
     </header>
 
-    <section class="page-hero">
+    <section class="contact-hero">
         <div class="container">
-            <h1>Contact Us</h1>
-            <p>Our luxury consultants are available to assist you</p>
+            <div class="hero-content">
+                <h1>Experience Personalized Luxury</h1>
+                <p class="lead">Our dedicated consultants are available to provide exceptional service tailored to your needs</p>
+                <div class="hero-buttons">
+                    <a href="#contact-form" class="btn btn-primary">Contact Our Team</a>
+                    <a href="#boutiques" class="btn btn-outline-light">Find a Boutique</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="contact-content">
+    <section class="contact-options">
+        <div class="container">
+            <h2 class="section-title">How Would You Like to Connect?</h2>
+            <div class="options-grid">
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-store-alt"></i>
+                    </div>
+                    <h3>Boutique Appointments</h3>
+                    <p>Schedule a private shopping experience at one of our luxury boutiques worldwide</p>
+                    <a href="#boutiques" class="btn-text">Book an Appointment <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Concierge Service</h3>
+                    <p>24/7 access to our luxury consultants for personalized assistance</p>
+                    <a href="tel:+18005555893" class="btn-text">Call +1 (800) 555-LUXE <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Inquiries</h3>
+                    <p>For general inquiries, our team responds within 24 hours</p>
+                    <a href="mailto:contact@noveloluxe.com" class="btn-text">Email Us <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-main">
         <div class="container">
             <div class="contact-grid">
-                <div class="contact-form">
+                <div class="contact-form" id="contact-form">
                     <h2>Send Us a Message</h2>
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                    <form id="luxury-contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" placeholder="Enter your phone number">
+                            </div>
+                            <div class="form-group">
+                                <label for="inquiry">Inquiry Type</label>
+                                <select id="inquiry" required>
+                                    <option value="">Select an option</option>
+                                    <option>Personal Shopping</option>
+                                    <option>Product Inquiry</option>
+                                    <option>Press & Collaborations</option>
+                                    <option>Customer Service</option>
+                                    <option>Boutique Appointment</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Email Address" required>
+                            <label for="message">Your Message</label>
+                            <textarea id="message" placeholder="How can we assist you today?" rows="5" required></textarea>
                         </div>
-                        <div class="form-group">
-                            <input type="tel" placeholder="Phone Number">
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            <p class="form-note">By submitting this form, you agree to our <a href="#">Privacy Policy</a></p>
                         </div>
-                        <div class="form-group">
-                            <select>
-                                <option value="">Select Inquiry Type</option>
-                                <option>Personal Shopping</option>
-                                <option>Product Inquiry</option>
-                                <option>Press & Collaborations</option>
-                                <option>Customer Service</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
                 </div>
 
                 <div class="contact-info">
-                    <h2>Connect With Us</h2>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3>Flagship Boutique</h3>
-                        <p>123 Luxury Avenue<br>New York, NY 10001</p>
-                        <a href="#" class="btn-text">View Map</a>
+                    <h2>Global Boutiques</h2>
+                    <div class="info-card" id="boutiques">
+                        <div class="info-header">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Flagship New York</h3>
+                        </div>
+                        <div class="info-content">
+                            <p>123 Luxury Avenue<br>New York, NY 10001</p>
+                            <p><strong>Hours:</strong> Mon-Sat: 10AM-7PM<br>Sun: 12PM-6PM</p>
+                            <a href="#" class="btn-text">Book Appointment <i class="fas fa-chevron-right"></i></a>
+                        </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <h3>Phone</h3>
-                        <p>+1 (800) 555-LUXE</p>
-                        <p>Monday-Friday: 9AM-6PM EST</p>
+                    <div class="info-card">
+                        <div class="info-header">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Paris Boutique</h3>
+                        </div>
+                        <div class="info-content">
+                            <p>45 Rue du Faubourg Saint-Honoré<br>75008 Paris, France</p>
+                            <p><strong>Hours:</strong> Mon-Sat: 10AM-7PM</p>
+                            <a href="#" class="btn-text">Book Appointment <i class="fas fa-chevron-right"></i></a>
+                        </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <h3>Email</h3>
-                        <p>contact@noveloluxe.com</p>
-                        <p>Response within 24 hours</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-calendar-alt"></i>
-                        <h3>Personal Appointments</h3>
-                        <p>Book a private shopping experience with our luxury consultants</p>
-                        <a href="#" class="btn-text">Schedule Appointment</a>
+                    <div class="info-card">
+                        <div class="info-header">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Tokyo Atelier</h3>
+                        </div>
+                        <div class="info-content">
+                            <p>5-5-8 Ginza, Chuo-ku<br>Tokyo 104-0061, Japan</p>
+                            <p><strong>Hours:</strong> Mon-Sat: 10AM-8PM<br>Sun: 11AM-7PM</p>
+                            <a href="#" class="btn-text">Book Appointment <i class="fas fa-chevron-right"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="contact-sections">
-                <div class="contact-section" id="shipping">
-                    <h2>Shipping & Returns</h2>
-                    <p>We offer complimentary shipping on all orders over $500. International shipping available with duties calculated at checkout.</p>
-                    <p>Returns accepted within 14 days of delivery for store credit or exchange. All limited edition items are final sale.</p>
-                    <a href="#" class="btn-text">View Full Policy</a>
-                </div>
-                
-                <div class="contact-section" id="care">
-                    <h2>Product Care</h2>
-                    <p>Proper care ensures your Novelo Luxe pieces last for generations. Our comprehensive care guides provide detailed instructions for each material type.</p>
-                    <a href="#" class="btn-text">Download Care Guides</a>
-                </div>
-                
-                <div class="contact-section" id="faq">
-                    <h2>Frequently Asked Questions</h2>
-                    <div class="faq-item">
+    <section class="contact-faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
                         <h3>How do I schedule a personal shopping appointment?</h3>
-                        <p>Contact our concierge team at +1 (800) 555-LUXE or book online through our appointment system.</p>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="faq-item">
-                        <h3>Do you offer alterations?</h3>
-                        <p>Yes, we provide complimentary basic alterations on all clothing purchases. Special alterations may incur additional fees.</p>
+                    <div class="faq-answer">
+                        <p>You can schedule a personal shopping appointment by calling our concierge team at +1 (800) 555-LUXE, booking online through our appointment system, or visiting any of our boutiques in person. Our personal shopping experiences typically last 90 minutes and include champagne service.</p>
                     </div>
-                    <a href="#" class="btn-text">View All FAQs</a>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer alterations on clothing purchases?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide complimentary basic alterations on all ready-to-wear purchases. More complex alterations may incur additional fees. Our in-house tailors typically complete alterations within 3-5 business days. For couture pieces, we include up to three fittings in the purchase price.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is your return policy?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept returns within 14 days of delivery for store credit or exchange. All limited edition and made-to-order items are final sale. Returns must be in original condition with all tags attached. For boutique purchases, please bring your receipt for faster processing.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How can I track my order?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Once your order ships, you'll receive a tracking number via email. For international orders, we'll also provide customs documentation. If you have an account with us, you can view all order details and tracking information in your profile. For urgent inquiries, our concierge team can provide updates.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="#" class="btn btn-outline">View All FAQs</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need Immediate Assistance?</h2>
+                <p>Our luxury consultants are available 24/7 to assist with any inquiries</p>
+                <div class="cta-buttons">
+                    <a href="tel:+18005555893" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Call +1 (800) 555-LUXE
+                    </a>
+                    <a href="mailto:contact@noveloluxe.com" class="btn btn-outline-light">
+                        <i class="fas fa-envelope"></i> Email Us
+                    </a>
                 </div>
             </div>
         </div>
@@ -269,14 +367,57 @@
                     <i class="fab fa-cc-mastercard"></i>
                     <i class="fab fa-cc-amex"></i>
                     <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-apple-pay"></i>
+                    <i class="fab fa-google-pay"></i>
                 </div>
                 <div class="copyright">
-                    <p>&copy; 2023 Novelo Luxe. All rights reserved.</p>
+                    <p>&copy; 2023 Novelo Luxe. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="../js/main.js"></script>
+    <script>
+        // Contact page specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ accordion functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('i');
+                    
+                    // Toggle the answer
+                    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                    
+                    // Rotate the icon
+                    icon.classList.toggle('fa-chevron-down');
+                    icon.classList.toggle('fa-chevron-up');
+                    
+                    // Close other open FAQs
+                    faqQuestions.forEach(otherQuestion => {
+                        if (otherQuestion !== question) {
+                            otherQuestion.nextElementSibling.style.display = 'none';
+                            otherQuestion.querySelector('i').classList.remove('fa-chevron-up');
+                            otherQuestion.querySelector('i').classList.add('fa-chevron-down');
+                        }
+                    });
+                });
+            });
+            
+            // Form submission
+            const contactForm = document.getElementById('luxury-contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // Here you would typically send the form data to your server
+                    alert('Thank you for your message. A luxury consultant will contact you shortly.');
+                    contactForm.reset();
+                });
+            }
+        });
+    </script>
 </body>
 </html>

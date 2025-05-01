@@ -172,6 +172,35 @@
         <div class="container">
             <div class="section-header">
                 <h2>Curated Collections</h2>
+                <div class="video-container">
+                    <video id="collectorVideo" muted loop playsinline poster="../../images/video-thumbnail2.jpg">
+                        <source src="images/home.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-caption">
+                        <h3>Become a Collector</h3>
+                        <p>Join our exclusive program for early access to limited releases</p>
+                        <button id="playButton" class="video-play-button" style="display: none;">
+                            <i class="fas fa-play"></i> Play Video
+                        </button>
+                    </div>
+                </div>
+                
+                <script>
+                    const video = document.getElementById('collectorVideo');
+                    const playButton = document.getElementById('playButton');
+                    
+                    // Try to autoplay
+                    video.play().catch(error => {
+                        // If autoplay fails, show play button
+                        playButton.style.display = 'block';
+                    });
+                    
+                    // Play button click handler
+                    playButton.addEventListener('click', () => {
+                        video.play();
+                        playButton.style.display = 'none';
+                    });
+                </script>
                 <p>Explore our thoughtfully curated collections designed for the modern connoisseur</p>
             </div>
             <div class="category-grid">
