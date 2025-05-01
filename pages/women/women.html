@@ -6,6 +6,51 @@
     <title>Women's Collection | Novelo Luxe</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Video Advertisement CSS - Fully Responsive */
+        .video-advertisement {
+            padding: 3rem 0;
+            background: #fafafa;
+            margin: 2.5rem 0;
+        }
+        .video-container {
+            max-width: 100%;
+            width: 100%;
+            margin: 0 auto;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1rem;
+        }
+        .video-container video {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            aspect-ratio: 16/9;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .video-advertisement {
+                padding: 2.5rem 0;
+            }
+        }
+        @media (max-width: 768px) {
+            .video-advertisement {
+                padding: 2rem 0;
+                margin: 2rem 0;
+            }
+        }
+        @media (max-width: 480px) {
+            .video-advertisement {
+                padding: 1.5rem 0;
+                margin: 1.5rem 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -21,14 +66,14 @@
                 <div class="header-content">
                     <div class="logo-container">
                         <a href="../../index.html">
-                            <img src="../../images/logo.jpeg" alt="Novelo Luxe Logo" class="logo">
+                            <img src="../../images/logo.jpg" alt="Novelo Luxe Logo" class="logo">
                         </a>
                     </div>
                     <nav class="main-nav">
                         <ul>
                             <li><a href="../../index.html">Home</a></li>
                             <li class="dropdown">
-                                <a href="../women/women.html" class="dropdown-toggle">Women</a>
+                                <a href="../women/women.html" class="dropdown-toggle active">Women</a>
                                 <div class="dropdown-content">
                                     <a href="../women/clothing.html">Clothing</a>
                                     <a href="../women/shoes.html">Shoes</a>
@@ -45,7 +90,7 @@
                                     <a href="../men/watches.html">Watches</a>
                                 </div>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="../accessories/accessories.html" class="dropdown-toggle">Accessories</a>
                                 <div class="dropdown-content">
                                     <a href="../accessories/jewelry.html">Jewelry</a>
@@ -73,7 +118,7 @@
             <ul>
                 <li><a href="../../index.html">Home</a></li>
                 <li class="mobile-dropdown">
-                    <a href="../women/women.html" class="mobile-dropdown-toggle">Women <i class="fas fa-chevron-down"></i></a>
+                    <a href="../women/women.html" class="mobile-dropdown-toggle active">Women <i class="fas fa-chevron-down"></i></a>
                     <ul class="mobile-dropdown-content">
                         <li><a href="../women/clothing.html">Clothing</a></li>
                         <li><a href="../women/shoes.html">Shoes</a></li>
@@ -85,12 +130,12 @@
                     <a href="../men/men.html" class="mobile-dropdown-toggle">Men <i class="fas fa-chevron-down"></i></a>
                     <ul class="mobile-dropdown-content">
                         <li><a href="../men/clothing.html">Clothing</a></li>
-                        <li><a href="../men/shoes.html">Shoes </a></li>
+                        <li><a href="../men/shoes.html">Shoes</a></li>
                         <li><a href="../men/accessories.html">Accessories</a></li>
                         <li><a href="../men/watches.html">Watches</a></li>
                     </ul>
                 </li>
-                <li class="mobile-dropdown active">
+                <li class="mobile-dropdown">
                     <a href="../accessories/accessories.html" class="mobile-dropdown-toggle">Accessories <i class="fas fa-chevron-down"></i></a>
                     <ul class="mobile-dropdown-content">
                         <li><a href="../accessories/jewelry.html">Jewelry</a></li>
@@ -126,13 +171,26 @@
     <nav class="collection-nav">
         <div class="container">
             <ul>
-                <li><a href="clothing.html" class="active">Clothing</a></li>
+                <li><a href="clothing.html">Clothing</a></li>
                 <li><a href="shoes.html">Shoes</a></li>
                 <li><a href="handbags.html">Handbags</a></li>
                 <li><a href="jewelry.html">Jewelry</a></li>
             </ul>
         </div>
     </nav>
+
+    <!-- Optimized Video Advertisement Section -->
+    <section class="video-advertisement">
+        <div class="container">
+            <div class="video-container">
+                <video controls playsinline poster="../../images/womens-video-thumb.jpg">
+                    <source src="../../images/women.mp4" type="video/mp4">
+                    <source src="../../images/women.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
 
     <section class="collection-products">
         <div class="container">
@@ -141,7 +199,6 @@
                 <p>Curated selection of our finest women's clothing</p>
             </div>
             <div class="product-grid">
-                <!-- Product Card 1 -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="../../images/products/women-dress.jpg" alt="Silk Chiffon Dress">
@@ -156,15 +213,13 @@
                         <p class="product-price">$1,850</p>
                     </div>
                 </div>
-
-                <!-- Product Card 2 -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="../../images/products/women-blouse.jpg" alt="Lace Blouse">
                         <div class="product-actions">
                             <button class="quick-view"><i class="fas fa-eye"></i></button>
                             <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                            <button class="add-to-cart" data-id="102" data-name="Lace Blouse" data-price="650" data-image="../../../images/products/women-blouse.jpg"><i class="fas fa-shopping-bag"></i></button>
+                            <button class="add-to-cart" data-id="102" data-name="Lace Blouse" data-price="650" data-image="../../images/products/women-blouse.jpg"><i class="fas fa-shopping-bag"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
@@ -172,15 +227,13 @@
                         <p class="product-price">$650</p>
                     </div>
                 </div>
-
-                <!-- Product Card 3 -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="../../images/products/women-pants.jpg" alt="Tailored Trousers">
                         <div class="product-actions">
                             <button class="quick-view"><i class="fas fa-eye"></i></button>
                             <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                            <button class="add-to-cart" data-id="103" data-name="Tailored Trousers" data-price="720" data-image="../../../images/products/women-pants.jpg"><i class="fas fa-shopping-bag"></i></button>
+                            <button class="add-to-cart" data-id="103" data-name="Tailored Trousers" data-price="720" data-image="../../images/products/women-pants.jpg"><i class="fas fa-shopping-bag"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
@@ -188,15 +241,13 @@
                         <p class="product-price">$720</p>
                     </div>
                 </div>
-
-                <!-- Product Card 4 -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="../../images/products/handbag3.jpg" alt="Monogram Shoulder Bag">
                         <div class="product-actions">
                             <button class="quick-view"><i class="fas fa-eye"></i></button>
                             <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                            <button class="add-to-cart" data-id="303" data-name="Monogram Shoulder Bag" data-price="1800" data-image="../../../images/products/handbag3.jpg"><i class="fas fa-shopping-bag"></i></button>
+                            <button class="add-to-cart" data-id="303" data-name="Monogram Shoulder Bag" data-price="1800" data-image="../../images/products/handbag3.jpg"><i class="fas fa-shopping-bag"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
@@ -204,15 +255,13 @@
                         <p class="product-price">$1,800</p>
                     </div>
                 </div>
-
-                <!-- Product Card 5 -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="../../images/products/brooch.jpg" alt="Diamond Brooch">
                         <div class="product-actions">
                             <button class="quick-view"><i class="fas fa-eye"></i></button>
                             <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                            <button class="add-to-cart" data-id="405" data-name="Diamond Brooch" data-price="6500" data-image="../../../images/products/brooch.jpg"><i class="fas fa-shopping-bag"></i></button>
+                            <button class="add-to-cart" data-id="405" data-name="Diamond Brooch" data-price="6500" data-image="../../images/products/brooch.jpg"><i class="fas fa-shopping-bag"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
@@ -220,15 +269,13 @@
                         <p class="product-price">$6,500</p>
                     </div>
                 </div>
-
-                <!-- Product Card 6 -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="../../images/products/women-shoe5.jpg" alt="Designer Sneakers">
                         <div class="product-actions">
                             <button class="quick-view"><i class="fas fa-eye"></i></button>
                             <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                            <button class="add-to-cart" data-id="205" data-name="Designer Sneakers" data-price="980" data-image="../../../images/products/women-shoe5.jpg"><i class="fas fa-shopping-bag"></i></button>
+                            <button class="add-to-cart" data-id="205" data-name="Designer Sneakers" data-price="980" data-image="../../images/products/women-shoe5.jpg"><i class="fas fa-shopping-bag"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
@@ -244,7 +291,7 @@
         <div class="container">
             <div class="highlight-card">
                 <div class="highlight-image">
-                    <img src="../../images/categories/women.jpg" alt="Evening Wear">
+                    <img src="../../images/women.jpg" alt="Evening Wear">
                 </div>
                 <div class="highlight-content">
                     <h2>Evening Wear</h2>
@@ -259,7 +306,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="../../images/logo.jpeg" alt="Novelo Luxe Logo" class="logo">
+                    <img src="../../images/logo.jpg" alt="Novelo Luxe Logo" class="logo">
                     <p>Timeless elegance, modern luxury</p>
                 </div>
                 <div class="footer-links">

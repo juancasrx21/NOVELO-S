@@ -6,6 +6,36 @@
     <title>Men's Collection | Novelo Luxe</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Video Advertisement CSS Only */
+        .video-advertisement {
+    padding: 50px 0;
+    background: #fafafa;
+    margin: 40px 0;
+}
+.video-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+.video-container video {
+    width: 50%;
+    display: block;
+    border-radius: 4px;
+}
+@media (max-width: 768px) {
+    .video-advertisement {
+        padding: 30px 0;
+        margin: 30px 0;
+    }
+    .video-container video {
+        width: 80%; /* Make video larger on mobile */
+    }
+}
+    </style>
 </head>
 <body>
     <header>
@@ -21,7 +51,7 @@
                 <div class="header-content">
                     <div class="logo-container">
                         <a href="../../index.html">
-                            <img src="../../images/logo.jpeg" alt="Novelo Luxe Logo" class="logo">
+                            <img src="../../images/logo.jpg" alt="Novelo Luxe Logo" class="logo">
                         </a>
                     </div>
                     <nav class="main-nav">
@@ -37,7 +67,7 @@
                                 </div>
                             </li>
                             <li class="dropdown">
-                                <a href="../men/men.html" class="dropdown-toggle">Men</a>
+                                <a href="../men/men.html" class="dropdown-toggle active">Men</a>
                                 <div class="dropdown-content">
                                     <a href="../men/clothing.html">Clothing</a>
                                     <a href="../men/shoes.html">Shoes</a>
@@ -46,7 +76,7 @@
                                 </div>
                             </li>
                             <li class="dropdown">
-                                <a href="../accessories/accessories.html" class="dropdown-toggle active">Accessories</a>
+                                <a href="../accessories/accessories.html" class="dropdown-toggle">Accessories</a>
                                 <div class="dropdown-content">
                                     <a href="../accessories/jewelry.html">Jewelry</a>
                                     <a href="../accessories/watches.html">Watches</a>
@@ -82,7 +112,7 @@
                     </ul>
                 </li>
                 <li class="mobile-dropdown">
-                    <a href="../men/men.html" class="mobile-dropdown-toggle">Men <i class="fas fa-chevron-down"></i></a>
+                    <a href="../men/men.html" class="mobile-dropdown-toggle active">Men <i class="fas fa-chevron-down"></i></a>
                     <ul class="mobile-dropdown-content">
                         <li><a href="../men/clothing.html">Clothing</a></li>
                         <li><a href="../men/shoes.html">Shoes</a></li>
@@ -90,7 +120,7 @@
                         <li><a href="../men/watches.html">Watches</a></li>
                     </ul>
                 </li>
-                <li class="mobile-dropdown active">
+                <li class="mobile-dropdown">
                     <a href="../accessories/accessories.html" class="mobile-dropdown-toggle">Accessories <i class="fas fa-chevron-down"></i></a>
                     <ul class="mobile-dropdown-content">
                         <li><a href="../accessories/jewelry.html">Jewelry</a></li>
@@ -126,13 +156,25 @@
     <nav class="collection-nav">
         <div class="container">
             <ul>
-                <li><a href="clothing.html" class="active">Clothing</a></li>
+                <li><a href="clothing.html">Clothing</a></li>
                 <li><a href="shoes.html">Shoes</a></li>
                 <li><a href="accessories.html">Accessories</a></li>
                 <li><a href="watches.html">Watches</a></li>
             </ul>
         </div>
     </nav>
+
+    <!-- Video Advertisement Section -->
+    <section class="video-advertisement">
+        <div class="container">
+            <div class="video-container">
+                <video controls poster="../../images/mens-video-thumb.jpg">
+                    <source src="../../images/men.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
 
     <section class="collection-products">
         <div class="container">
@@ -155,7 +197,104 @@
                         <p class="product-price">$2,950</p>
                     </div>
                 </div>
-                <!-- Repeat for 7 more products -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../../images/products/men-shirt.jpg" alt="Silk Dress Shirt">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="add-to-cart" data-id="7" data-name="Silk Dress Shirt" data-price="450" data-image="../../images/products/men-shirt.jpg"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Silk Dress Shirt</h3>
+                        <p class="product-price">$450</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../../images/products/men-coat.jpg" alt="Cashmere Overcoat">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="add-to-cart" data-id="8" data-name="Cashmere Overcoat" data-price="1850" data-image="../../images/products/men-coat.jpg"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Cashmere Overcoat</h3>
+                        <p class="product-price">$1,850</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../../images/products/men-pants.jpg" alt="Tailored Wool Trousers">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="add-to-cart" data-id="9" data-name="Tailored Wool Trousers" data-price="320" data-image="../../images/products/men-pants.jpg"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tailored Wool Trousers</h3>
+                        <p class="product-price">$320</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../../images/products/men-sweater.jpg" alt="Cashmere Crewneck">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="add-to-cart" data-id="10" data-name="Cashmere Crewneck" data-price="380" data-image="../../images/products/men-sweater.jpg"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Cashmere Crewneck</h3>
+                        <p class="product-price">$380</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../../images/products/men-vest.jpg" alt="Silk Waistcoat">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="add-to-cart" data-id="11" data-name="Silk Waistcoat" data-price="275" data-image="../../images/products/men-vest.jpg"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Silk Waistcoat</h3>
+                        <p class="product-price">$275</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../../images/products/men-blazer.jpg" alt="Linen Sport Coat">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="add-to-cart" data-id="12" data-name="Linen Sport Coat" data-price="675" data-image="../../images/products/men-blazer.jpg"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Linen Sport Coat</h3>
+                        <p class="product-price">$675</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../../images/products/men-denim.jpg" alt="Premium Selvedge Denim">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="add-to-cart" data-id="13" data-name="Premium Selvedge Denim" data-price="295" data-image="../../images/products/men-denim.jpg"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Selvedge Denim</h3>
+                        <p class="product-price">$295</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
