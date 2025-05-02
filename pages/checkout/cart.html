@@ -6,6 +6,231 @@
     <title>Your Shopping Bag | Novelo Luxe</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Cart-specific styles */
+        .empty-cart {
+            text-align: center;
+            padding: 80px 0;
+            display: block;
+        }
+        
+        .empty-cart-icon {
+            font-size: 60px;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .empty-cart h2 {
+            margin-bottom: 15px;
+            font-weight: 300;
+            font-size: 1.8rem;
+        }
+        
+        .empty-cart p {
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .cart-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+        }
+        
+        .cart-items {
+            display: none;
+        }
+        
+        .cart-items.has-items {
+            display: block;
+        }
+        
+        .cart-item {
+            display: flex;
+            padding: 25px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        
+        .cart-item-image {
+            width: 150px;
+            height: 150px;
+            margin-right: 25px;
+            flex-shrink: 0;
+        }
+        
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-details h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+        
+        .cart-item-details .price {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin-right: 30px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .quantity-btn {
+            width: 35px;
+            height: 35px;
+            background: #f9f9f9;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .quantity-btn:hover {
+            background: #eee;
+        }
+        
+        .quantity {
+            width: 40px;
+            text-align: center;
+        }
+        
+        .remove-item {
+            background: none;
+            border: none;
+            color: #666;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        .remove-item:hover {
+            color: #333;
+        }
+        
+        .cart-summary {
+            background: #f9f9f9;
+            padding: 30px;
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+        
+        .cart-summary h2 {
+            margin-top: 0;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+        }
+        
+        .summary-details {
+            margin-bottom: 25px;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .summary-row.total {
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 25px;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        
+        .secure-checkout {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .continue-shopping {
+            text-align: center;
+        }
+        
+        .btn-text {
+            color: #333;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .btn-text:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 992px) {
+            .cart-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cart-summary {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .cart-item {
+                flex-direction: column;
+            }
+            
+            .cart-item-image {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .cart-item-actions {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .quantity-selector {
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -21,7 +246,7 @@
                 <div class="header-content">
                     <div class="logo-container">
                         <a href="../../index.html">
-                            <img src="../../images/logo.png" alt="Novelo Luxe Logo" class="logo">
+                            <img src="../../images/logo.jpg" alt="Novelo Luxe Logo" class="logo">
                         </a>
                     </div>
                     <nav class="main-nav">
@@ -124,12 +349,20 @@
 
     <section class="cart-content">
         <div class="container">
-            <div class="cart-grid">
-                <div class="cart-items">
-                <!-- Cart items will be dynamically rendered here -->
-                <div class="cart-items">
+            <!-- Empty Cart State -->
+            <div class="empty-cart" id="emptyCart">
+                <div class="empty-cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
                 </div>
-                <!-- Additional cart items would go here -->
+                <h2>Your Bag is Empty</h2>
+                <p>Start adding items to your bag to begin your Novelo Luxe experience. Explore our collections to discover timeless pieces crafted with excellence.</p>
+                <a href="../../index.html" class="btn btn-primary">Continue Shopping</a>
+            </div>
+
+            <!-- Cart with Items (initially hidden) -->
+            <div class="cart-grid" id="cartWithItems" style="display: none;">
+                <div class="cart-items">
+                    <!-- Cart items will be dynamically inserted here by script.js -->
                 </div>
 
                 <div class="cart-summary">
@@ -137,19 +370,19 @@
                     <div class="summary-details">
                         <div class="summary-row">
                             <span>Subtotal</span>
-                            <span>$2,450</span>
+                            <span id="cartSubtotal">$0.00</span>
                         </div>
                         <div class="summary-row">
                             <span>Shipping</span>
-                            <span>FREE</span>
+                            <span id="cartShipping">FREE</span>
                         </div>
                         <div class="summary-row">
                             <span>Estimated Tax</span>
-                            <span>$220.50</span>
+                            <span id="cartTax">$0.00</span>
                         </div>
                         <div class="summary-row total">
                             <span>Total</span>
-                            <span>$2,670.50</span>
+                            <span id="cartTotal">$0.00</span>
                         </div>
                     </div>
                     <button class="btn btn-primary checkout-btn">Proceed to Checkout</button>
@@ -179,7 +412,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="../../images/logo.png" alt="Novelo Luxe Logo" class="logo">
+                    <img src="../../images/logo.jpg" alt="Novelo Luxe Logo" class="logo">
                     <p>Timeless elegance, modern luxury</p>
                 </div>
                 <div class="footer-links">

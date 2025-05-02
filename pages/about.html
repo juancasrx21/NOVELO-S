@@ -7,6 +7,111 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta name="description" content="Discover the heritage of Novelo Luxe - a luxury fashion house dedicated to artisan craftsmanship and sustainable luxury since 2010.">
+    <style>
+        /* Gissan Novelo Profile Styles */
+        .profile-section {
+            background: #fafafa;
+            padding: 80px 0;
+            margin: 60px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .profile-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .profile-image {
+            flex: 0 0 350px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .profile-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .profile-content {
+            flex: 1;
+        }
+        
+        .profile-content h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: 300;
+        }
+        
+        .profile-title {
+            color: #b8860b;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            display: block;
+        }
+        
+        .profile-bio {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        
+        .profile-contact {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .profile-contact a {
+            display: inline-block;
+            padding: 10px 25px;
+            border: 1px solid #b8860b;
+            color: #b8860b;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .profile-contact a:hover {
+            background: #b8860b;
+            color: white;
+        }
+        
+        .profile-social {
+            margin-top: 30px;
+        }
+        
+        .profile-social a {
+            color: #777;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+        
+        .profile-social a:hover {
+            color: #b8860b;
+        }
+        
+        @media (max-width: 900px) {
+            .profile-container {
+                flex-direction: column;
+                padding: 0 20px;
+            }
+            
+            .profile-image {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -313,6 +418,40 @@
             </div>
             <div class="text-center">
                 <a href="#" class="btn btn-outline">View Full Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gissan Novelo Profile Section -->
+    <section class="profile-section">
+        <div class="profile-container">
+            <div class="profile-image">
+                <img src="../images/owner.jpg" alt="Gissan Novelo" loading="lazy">
+            </div>
+            <div class="profile-content">
+                <h2>Gissan Novelo</h2>
+                <span class="profile-title">Student & Group Leader</span>
+                
+                <div class="profile-bio">
+                    <p>Hello, I'm Gissan Novelo, a dedicated student and group leader with a passion for collaborative projects and skill development. With experience in leading teams and working on various initiatives, I'm committed to delivering high-quality results.</p>
+                    <p>I'm excited to share my experiences, projects, and insights with you through this platform. My journey in leadership and team collaboration has taught me the value of communication, organization, and creative problem-solving.</p>
+                    <p>At Novelo Luxe, I've had the privilege to contribute to special projects that bridge traditional craftsmanship with innovative approaches to luxury fashion.</p>
+                </div>
+                
+                <div class="profile-contact">
+                    <a href="mailto:gissan@noveloluxe.com">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+                    <a href="../contact.html">
+                        <i class="fas fa-comments"></i> Collaborate
+                    </a>
+                </div>
+                
+                <div class="profile-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Portfolio"><i class="fas fa-briefcase"></i></a>
+                </div>
             </div>
         </div>
     </section>
