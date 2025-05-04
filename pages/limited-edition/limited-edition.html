@@ -7,31 +7,384 @@
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        .video-advertisement .video-container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto 30px;
+        /* Base Styles */
+        :root {
+            --primary-color: #c9a980;
+            --secondary-color: #5a4a3e;
+            --light-color: #f5f1e9;
+            --dark-color: #2a241f;
+            --text-color: #4a3f36;
+            --border-color: #e0e0e0;
+            --transition: all 0.3s ease;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            --hover-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
-        .video-advertisement video {
+        /* Limited Edition Page Specific Styles */
+        .page-hero {
+            background-color: #f5f0e9;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 48px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .page-hero p {
+            font-size: 18px;
+            color: var(--text-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* 3D Carousel Section */
+        .carousel-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            position: relative;
             width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+
+        .product-carousel-3d {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            margin: 50px auto;
+            transform-style: preserve-3d;
+            transition: transform 1s ease;
+        }
+
+        .product-card-3d {
+            position: absolute;
+            width: 280px;
+            height: 380px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow);
+            top: 50%;
+            left: 50%;
+            transform-origin: center;
+            transition: all 0.5s ease;
+            overflow: hidden;
+        }
+
+        .product-card-3d img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card-3d:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-info-3d {
+            padding: 20px;
+            background: white;
+        }
+
+        .product-info-3d h3 {
+            font-size: 18px;
+            color: var(--dark-color);
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .product-info-3d p {
+            font-size: 16px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .limited-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+
+        .product-actions-3d {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 0 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-card-3d:hover .product-actions-3d {
+            opacity: 1;
+        }
+
+        .product-actions-3d button {
+            background: rgba(255,255,255,0.9);
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .product-actions-3d button:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .product-actions-3d .add-to-cart {
+            background: var(--secondary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+        }
+
+        .product-actions-3d .add-to-cart:hover {
+            background: var(--primary-color);
+        }
+
+        /* Carousel Navigation */
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .carousel-nav button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-nav button:hover {
+            background: var(--secondary-color);
+            transform: scale(1.1);
+        }
+
+        /* Video Section */
+        .video-advertisement {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+
+        .video-caption {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .video-caption h3 {
+            font-size: 28px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .video-caption p {
+            color: var(--text-color);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .image-row {
             display: flex;
             justify-content: space-between;
-            margin-top: 30px;
+            max-width: 900px;
+            margin: 30px auto 0;
             gap: 20px;
         }
 
         .image-row div {
-            width: 48%;
+            flex: 1;
         }
 
         .image-row img {
             width: 100%;
             height: auto;
             display: block;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Collectors Section */
+        .collectors-section {
+            padding: 80px 0;
+            text-align: center;
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .collectors-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .collectors-content h2 {
+            font-size: 36px;
+            color: white;
+            margin-bottom: 20px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .collectors-content p {
+            color: rgba(255,255,255,0.9);
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 2px 8px rgba(166, 124, 58, 0.6);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dark-color);
+            box-shadow: 0 4px 12px rgba(90, 74, 62, 0.8);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1200px) {
+            .product-carousel-3d {
+                height: 450px;
+            }
+            
+            .product-card-3d {
+                width: 250px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .page-hero h1 {
+                font-size: 42px;
+            }
+            
+            .product-carousel-3d {
+                height: 400px;
+            }
+            
+            .product-card-3d {
+                width: 220px;
+                height: 320px;
+            }
+            
+            .product-card-3d img {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                padding: 80px 0;
+            }
+            
+            .page-hero h1 {
+                font-size: 36px;
+            }
+            
+            .product-carousel-3d {
+                height: 350px;
+            }
+            
+            .product-card-3d {
+                width: 200px;
+                height: 300px;
+            }
+            
+            .video-caption h3 {
+                font-size: 24px;
+            }
+            
+            .image-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-hero h1 {
+                font-size: 32px;
+            }
+            
+            .product-carousel-3d {
+                height: 300px;
+            }
+            
+            .product-card-3d {
+                width: 180px;
+                height: 260px;
+            }
+            
+            .carousel-nav button {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -151,7 +504,127 @@
         </div>
     </section>
 
-    <!-- First Video Advertisement -->
+    <div class="video-container">
+        <video controls poster="../../images/video-thumbnail1.jpg">
+            <source src="../../images/limited-edition.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-caption">
+            <h3>The Art of Exclusivity</h3>
+            <p>Discover the craftsmanship behind our limited edition pieces</p>
+        </div>
+    </div>
+
+    <!-- 3D Carousel Section -->
+    <section class="carousel-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Designer Purse Collection</h2>
+                <p>Rotating 3D display of our exclusive limited edition purses</p>
+            </div>
+            
+            <div class="carousel-container">
+                <div class="product-carousel-3d" id="carousel">
+                    <!-- Product 1 -->
+                    <div class="product-card-3d">
+                        <div class="limited-badge">Limited Edition</div>
+                        <img src="../../images/products/purse1.jpg" alt="Designer Purse 1">
+                        <div class="product-info-3d">
+                            <h3>Designer Purse 1</h3>
+                            <p>$2,450</p>
+                        </div>
+                        <div class="product-actions-3d">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="add-to-cart" data-id="21" data-name="Designer Purse 1" data-price="2450" data-image="../../images/products/purse1.jpg"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="product-card-3d">
+                        <div class="limited-badge">Only 5 Left</div>
+                        <img src="../../images/products/purse2.jpg" alt="Designer Purse 2">
+                        <div class="product-info-3d">
+                            <h3>Designer Purse 2</h3>
+                            <p>$2,150</p>
+                        </div>
+                        <div class="product-actions-3d">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="add-to-cart" data-id="22" data-name="Designer Purse 2" data-price="2150" data-image="../../images/products/purse2.jpg"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 3 -->
+                    <div class="product-card-3d">
+                        <div class="limited-badge">New Arrival</div>
+                        <img src="../../images/products/purse3.jpg" alt="Designer Purse 3">
+                        <div class="product-info-3d">
+                            <h3>Designer Purse 3</h3>
+                            <p>$2,800</p>
+                        </div>
+                        <div class="product-actions-3d">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="add-to-cart" data-id="23" data-name="Designer Purse 3" data-price="2800" data-image="../../images/products/purse3.jpg"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 4 -->
+                    <div class="product-card-3d">
+                        <div class="limited-badge">Only 3 Left</div>
+                        <img src="../../images/products/purse4.jpg" alt="Designer Purse 4">
+                        <div class="product-info-3d">
+                            <h3>Designer Purse 4</h3>
+                            <p>$2,600</p>
+                        </div>
+                        <div class="product-actions-3d">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="add-to-cart" data-id="24" data-name="Designer Purse 4" data-price="2600" data-image="../../images/products/purse4.jpg"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 5 -->
+                    <div class="product-card-3d">
+                        <div class="limited-badge">Exclusive</div>
+                        <img src="../../images/products/purse5.jpg" alt="Designer Purse 5">
+                        <div class="product-info-3d">
+                            <h3>Designer Purse 5</h3>
+                            <p>$3,200</p>
+                        </div>
+                        <div class="product-actions-3d">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="add-to-cart" data-id="25" data-name="Designer Purse 5" data-price="3200" data-image="../../images/products/purse5.jpg"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 6 -->
+                    <div class="product-card-3d">
+                        <div class="limited-badge">Last Chance</div>
+                        <img src="../../images/products/purse6.jpg" alt="Designer Purse 6">
+                        <div class="product-info-3d">
+                            <h3>Designer Purse 6</h3>
+                            <p>$2,900</p>
+                        </div>
+                        <div class="product-actions-3d">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+                            <button class="add-to-cart" data-id="26" data-name="Designer Purse 6" data-price="2900" data-image="../../images/products/purse6.jpg"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-nav">
+                    <button id="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button id="next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Advertisement -->
     <section class="video-advertisement">
         <div class="container">
             <div class="video-container">
@@ -164,125 +637,32 @@
                     <p>Discover the craftsmanship behind our limited edition pieces</p>
                 </div>
             </div>
-            
-            <div class="image-row">
-                <div>
-                    <img src="../../images/products/watcha.jpg" alt="Limited Watch">
-                </div>
-                <div>
-                    <img src="../../images/products/watchb.jpg" alt="Limited Watch">
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="limited-products">
-        <div class="container">
-            <div class="section-header">
-                <h2>Current Collections</h2>
-                <p>These exclusive pieces will only be available for a short time</p>
-            </div>
+           
+            
             <div class="product-grid">
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="../../images/products/limited-watch.jpg" alt="Artisan Timepiece">
-                        <div class="limited-badge">Only 12 Left</div>
+                    <div class="product-image-container">
+                        <img src="../../images/products/watcha.jpg" alt="Leather Handbag" class="product-image">
+                        <div class="product-badge">New</div>
                         <div class="product-actions">
-                            <button class="quick-view"><i class="fas fa-eye"></i></button>
-                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                            <button class="add-to-cart" data-id="8" data-name="Artisan Crafted Timepiece" data-price="12500" data-image="../../images/products/limited-watch.jpg"><i class="fas fa-shopping-bag"></i></button>
+                            <button class="quick-view" title="Quick View"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-wishlist" title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                            <button class="add-to-cart" title="Add to Cart" data-id="handbag1" data-name="Signature Leather Handbag" data-price="2450" data-image="images/products/handbag.jpg"><i class="fas fa-shopping-bag"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
-                        <h3>Artisan Crafted Timepiece</h3>
-                        <p class="product-price">$12,500</p>
+                        <h3 class="product-title">Signature Leather Handbag</h3>
+                        <p class="product-category">Women's Accessories</p>
+                        <p class="product-price">$2,450</p>
                     </div>
                 </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="../../images/products/limited-bag.jpg" alt="Limited Edition Handbag">
-                        <div class="limited-badge">Only 5 Left</div>
-                        <div class="product-actions">
-                            <button class="quick-view"><i class="fas fa-eye"></i></button>
-                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                            <button class="add-to-cart" data-id="9" data-name="Limited Edition Handbag" data-price="8500" data-image="../../images/products/limited-bag.jpg"><i class="fas fa-shopping-bag"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Limited Edition Handbag</h3>
-                        <p class="product-price">$8,500</p>
-                    </div>
                 </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="../../images/products/limited-jacket.jpg" alt="Exclusive Leather Jacket">
-                        <div class="limited-badge">Only 8 Left</div>
-                        <div class="product-actions">
-                            <button class="quick-view"><i class="fas fa-eye"></i></button>
-                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                            <button class="add-to-cart" data-id="10" data-name="Exclusive Leather Jacket" data-price="6800" data-image="../../images/products/limited-jacket.jpg"><i class="fas fa-shopping-bag"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Exclusive Leather Jacket</h3>
-                        <p class="product-price">$6,800</p>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="../../images/products/limited-jewelry.jpg" alt="Rare Gemstone Necklace">
-                        <div class="limited-badge">Only 3 Left</div>
-                        <div class="product-actions">
-                            <button class="quick-view"><i class="fas fa-eye"></i></button>
-                            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
-                            <button class="add-to-cart" data-id="11" data-name="Rare Gemstone Necklace" data-price="14200" data-image="../../images/products/limited-jewelry.jpg"><i class="fas fa-shopping-bag"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Rare Gemstone Necklace</h3>
-                        <p class="product-price">$14,200</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- Second Video Advertisement -->
-    <section class="video-advertisement">
-        <div class="container">
-            <div class="video-container">
-                <video controls poster="../../images/video-thumbnail2.jpg">
-                    <source src="../../images/limited-edition.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="video-caption">
-                    <h3>Become a Collector</h3>
-                    <p>Join our exclusive program for early access to limited releases</p>
-                </div>
-            </div>
-            
-            <div class="image-row">
-                <div>
-                    <img src="../../images/products/purse1.jpg" alt="Limited Jacket">
-                </div>
-                <div>
-                    <img src="../../images/products/purse2.jpg" alt="Limited Jewelry">
-                </div>
-                <div>
-                    <img src="../../images/products/purse3.jpg" alt="Limited Jewelry">
-                </div>
-                <div>
-                    <img src="../../images/products/purse4.jpg" alt="Limited Jewelry">
-                </div>
-                <div>
-                    <img src="../../images/products/purse5.jpg" alt="Limited Jewelry">
-                </div>
-                <div>
-                    <img src="../../images/products/purse6.jpg" alt="Limited Jewelry">
-                </div>
-            </div>
-        </div>
-    </section>
+    
+
 
     <section class="collectors-section">
         <div class="container">
@@ -308,7 +688,7 @@
                             <li><a href="../women/women.html">Women</a></li>
                             <li><a href="../men/men.html">Men</a></li>
                             <li><a href="../accessories/accessories.html">Accessories</a></li>
-                            <li><a href="../limited-edition/limited-edition.html">Limited Edition</a></li>
+                            <li><a href="limited-edition.html">Limited Edition</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -358,6 +738,193 @@
         </div>
     </footer>
 
-    <script src="../../js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+            });
+            
+            // Mobile Dropdown Toggle
+            document.querySelectorAll('.mobile-dropdown-toggle').forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const content = this.nextElementSibling;
+                    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+                    this.querySelector('i').classList.toggle('fa-chevron-up');
+                });
+            });
+            
+            // Search Toggle
+            const searchToggle = document.querySelector('.search-toggle');
+            const searchOverlay = document.querySelector('.search-overlay');
+            const closeSearch = document.querySelector('.close-search');
+            
+            searchToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                searchOverlay.style.display = 'flex';
+            });
+            
+            closeSearch.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+            });
+            
+            // 3D Carousel Functionality
+            const carousel = document.getElementById('carousel');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const products = document.querySelectorAll('.product-card-3d');
+            
+            let currentAngle = 0;
+            const angleIncrement = 60; // 360° divided by 6 products
+            const radius = 400; // Distance from center
+            
+            function updateCarousel() {
+                products.forEach((product, index) => {
+                    const angle = currentAngle + (index * angleIncrement);
+                    const x = Math.sin(angle * Math.PI / 180) * radius;
+                    const z = Math.cos(angle * Math.PI / 180) * radius;
+                    
+                    product.style.transform = `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${-angle}deg)`;
+                    
+                    // Adjust opacity based on position
+                    const opacity = 0.6 + (0.4 * (z + radius) / (2 * radius));
+                    product.style.opacity = opacity;
+                    product.style.filter = `brightness(${0.6 + (0.4 * (z + radius) / (2 * radius))})`;
+                });
+            }
+            
+            function rotateCarousel(direction) {
+                currentAngle += direction * angleIncrement;
+                updateCarousel();
+            }
+            
+            // Initialize carousel
+            updateCarousel();
+            
+            // Event listeners for navigation
+            prevBtn.addEventListener('click', () => rotateCarousel(-1));
+            nextBtn.addEventListener('click', () => rotateCarousel(1));
+            
+            // Auto-rotate every 5 seconds
+            let autoRotate = setInterval(() => rotateCarousel(1), 5000);
+            
+            // Pause auto-rotation on hover
+            carousel.addEventListener('mouseenter', () => {
+                clearInterval(autoRotate);
+            });
+            
+            carousel.addEventListener('mouseleave', () => {
+                autoRotate = setInterval(() => rotateCarousel(1), 5000);
+            });
+            
+            // Cart Functionality
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart'));
+                if (!cart || cart.length === 0) {
+                    // No products added yet, reset count to 0
+                    document.querySelectorAll('.cart-count').forEach(el => {
+                        el.textContent = '0';
+                    });
+                } else {
+                    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                    document.querySelectorAll('.cart-count').forEach(el => {
+                        el.textContent = totalItems;
+                    });
+                }
+            }
+            
+            // Add to Cart functionality
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const productId = this.getAttribute('data-id');
+                    const productName = this.getAttribute('data-name');
+                    const productPrice = this.getAttribute('data-price');
+                    const productImage = this.getAttribute('data-image');
+                    
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    const existingItem = cart.find(item => item.id === productId);
+                    
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cart.push({
+                            id: productId,
+                            name: productName,
+                            price: productPrice,
+                            image: productImage,
+                            quantity: 1
+                        });
+                    }
+                    
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    updateCartCount();
+                    
+                    // Add animation to cart icon
+                    const cartIcon = document.querySelector('.cart-icon');
+                    cartIcon.classList.add('animate');
+                    setTimeout(() => {
+                        cartIcon.classList.remove('animate');
+                    }, 500);
+                    
+                    alert(`${productName} has been added to your cart!`);
+                });
+            });
+            
+            // Initialize cart count
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart'));
+                if (!cart || cart.length === 0) {
+                    // No products added yet, reset count to 0
+                    document.querySelectorAll('.cart-count').forEach(el => {
+                        el.textContent = '0';
+                    });
+                } else {
+                    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                    document.querySelectorAll('.cart-count').forEach(el => {
+                        el.textContent = totalItems;
+                    });
+                }
+            }
+
+            updateCartCount();
+            
+            // Quick View functionality
+            document.querySelectorAll('.quick-view').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const productCard = this.closest('.product-card-3d');
+                    const productName = productCard.querySelector('h3').textContent;
+                    const productPrice = productCard.querySelector('p').textContent;
+                    
+                    alert(`Quick View:\n${productName}\n${productPrice}`);
+                });
+            });
+            
+            // Add to Wishlist functionality
+            document.querySelectorAll('.add-to-wishlist').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const productCard = this.closest('.product-card-3d');
+                    const productName = productCard.querySelector('h3').textContent;
+                    
+                    this.innerHTML = '<i class="fas fa-heart"></i>';
+                    this.style.color = '#c9a980';
+                    
+                    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+                    if (!wishlist.includes(productName)) {
+                        wishlist.push(productName);
+                        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                    }
+                    
+                    alert(`${productName} has been added to your wishlist!`);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
