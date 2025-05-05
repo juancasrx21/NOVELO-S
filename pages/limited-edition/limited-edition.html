@@ -20,6 +20,57 @@
             --hover-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
+        /* Video Container Styles */
+        .video-container {
+            position: relative;
+            max-width: 900px;
+            margin: 30px auto;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+
+        .sound-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            z-index: 10;
+            transition: opacity 0.3s;
+        }
+
+        .sound-btn:hover {
+            opacity: 0.9;
+        }
+
+        .video-caption {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .video-caption h3 {
+            font-size: 28px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .video-caption p {
+            color: var(--text-color);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
         /* Limited Edition Page Specific Styles */
         .page-hero {
             background-color: #f5f0e9;
@@ -206,36 +257,6 @@
         .video-advertisement {
             padding: 60px 0;
             background-color: white;
-        }
-
-        .video-container {
-            max-width: 900px;
-            margin: 0 auto;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-
-        .video-container video {
-            width: 100%;
-            display: block;
-        }
-
-        .video-caption {
-            text-align: center;
-            padding: 30px;
-        }
-
-        .video-caption h3 {
-            font-size: 28px;
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        .video-caption p {
-            color: var(--text-color);
-            font-size: 16px;
-            max-width: 600px;
-            margin: 0 auto;
         }
 
         .image-row {
@@ -504,14 +525,16 @@
         </div>
     </section>
 
+    <!-- First Video Section -->
     <div class="video-container">
-        <video controls poster="../../images/video-thumbnail1.jpg">
+        <video id="featuredVideo" autoplay muted loop playsinline poster="../../images/video-thumbnail2.jpg">
             <source src="../../images/limited-edition.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        <button id="toggleSound1" class="sound-btn">🔇 Unmute</button>
         <div class="video-caption">
-            <h3>The Art of Exclusivity</h3>
-            <p>Discover the craftsmanship behind our limited edition pieces</p>
+            <h3>Featured Collection</h3>
+            <p>Explore this season's standout designs</p>
         </div>
     </div>
 
@@ -624,21 +647,20 @@
         </div>
     </section>
 
-    <!-- Video Advertisement -->
+    <!-- Second Video Section -->
     <section class="video-advertisement">
         <div class="container">
             <div class="video-container">
-                <video controls poster="../../images/video-thumbnail1.jpg">
+                <video id="exclusiveVideo" autoplay muted loop playsinline poster="../../images/video-thumbnail1.jpg">
                     <source src="../../images/limited-watch.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                <button id="toggleSound2" class="sound-btn">🔇 Unmute</button>
                 <div class="video-caption">
                     <h3>The Art of Exclusivity</h3>
                     <p>Discover the craftsmanship behind our limited edition pieces</p>
                 </div>
             </div>
-
-           
             
             <div class="product-grid">
                 <div class="product-card">
@@ -657,12 +679,9 @@
                         <p class="product-price">$2,450</p>
                     </div>
                 </div>
-                </div>
+            </div>
         </div>
     </section>
-
-    
-
 
     <section class="collectors-section">
         <div class="container">
@@ -821,6 +840,23 @@
                 autoRotate = setInterval(() => rotateCarousel(1), 5000);
             });
             
+            // Video Sound Toggle Functionality
+            const video1 = document.getElementById('featuredVideo');
+            const toggleSound1 = document.getElementById('toggleSound1');
+            
+            toggleSound1.addEventListener('click', () => {
+                video1.muted = !video1.muted;
+                toggleSound1.textContent = video1.muted ? '🔇 Unmute' : '🔊 Mute';
+            });
+            
+            const video2 = document.getElementById('exclusiveVideo');
+            const toggleSound2 = document.getElementById('toggleSound2');
+            
+            toggleSound2.addEventListener('click', () => {
+                video2.muted = !video2.muted;
+                toggleSound2.textContent = video2.muted ? '🔇 Unmute' : '🔊 Mute';
+            });
+            
             // Cart Functionality
             function updateCartCount() {
                 const cart = JSON.parse(localStorage.getItem('cart'));
@@ -876,21 +912,6 @@
             });
             
             // Initialize cart count
-            function updateCartCount() {
-                const cart = JSON.parse(localStorage.getItem('cart'));
-                if (!cart || cart.length === 0) {
-                    // No products added yet, reset count to 0
-                    document.querySelectorAll('.cart-count').forEach(el => {
-                        el.textContent = '0';
-                    });
-                } else {
-                    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-                    document.querySelectorAll('.cart-count').forEach(el => {
-                        el.textContent = totalItems;
-                    });
-                }
-            }
-
             updateCartCount();
             
             // Quick View functionality
