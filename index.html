@@ -180,19 +180,111 @@
         <div class="container">
             <div class="section-header">
                 <h2>Curated Collections</h2>
+                
                 <div class="video-container">
                     <video id="collectorVideo" autoplay muted loop playsinline poster="images/video-thumbnail2.jpg">
-                        <source src="images/home.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
+                      <source src="images/home.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
                     </video>
-                    <div class="video-caption">
+                    <div class="video-caption-container">
+                      <div class="video-caption">
                         <h3>Become a Collector</h3>
                         <p>Join our exclusive program for early access to limited releases</p>
-                        <button id="unmuteButton" class="video-control-button">
-                            <i class="fas fa-volume-mute"></i> Unmute
-                        </button>
+                      </div>
+                      <button id="unmuteButton" class="sound-btn">
+                        <i class="fas fa-volume-mute"></i> Unmute
+                      </button>
                     </div>
-                </div>
+                  </div>
+                  
+                  <style>
+                    .video-container {
+                      position: relative;
+                      max-width: 900px;
+                      margin: 30px auto;
+                      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+                    }
+                    
+                    .video-container video {
+                      width: 100%;
+                      display: block;
+                    }
+                    
+                    .video-caption-container {
+                      padding: 25px;
+                      text-align: center;
+                      background: white;
+                    }
+                    
+                    .video-caption h3 {
+                      font-size: 28px;
+                      color: var(--secondary-color);
+                      margin-bottom: 15px;
+                      font-family: 'Cormorant Garamond', serif;
+                    }
+                    
+                    .video-caption p {
+                      color: var(--text-color);
+                      font-size: 16px;
+                      max-width: 600px;
+                      margin: 0 auto 20px;
+                    }
+                    
+                    .sound-btn {
+                      background: var(--primary-color);
+                      color: white;
+                      border: none;
+                      border-radius: 30px;
+                      padding: 10px 25px;
+                      font-size: 14px;
+                      cursor: pointer;
+                      transition: all 0.3s ease;
+                      display: inline-flex;
+                      align-items: center;
+                      gap: 8px;
+                      margin-top: 15px;
+                    }
+                    
+                    .sound-btn:hover {
+                      background: var(--dark-color);
+                    }
+                    
+                    .sound-btn i {
+                      font-size: 16px;
+                    }
+                  </style>
+                  
+                  <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                      const video = document.getElementById('collectorVideo');
+                      const unmuteButton = document.getElementById('unmuteButton');
+                      
+                      unmuteButton.addEventListener('click', function() {
+                        try {
+                          video.muted = !video.muted;
+                          updateButton();
+                          
+                          if (!video.muted) {
+                            video.play().catch(e => {
+                              console.log("Playback prevented:", e);
+                              unmuteButton.innerHTML = '<i class="fas fa-exclamation-circle"></i> Click to play';
+                            });
+                          }
+                        } catch (e) {
+                          console.error("Error toggling sound:", e);
+                        }
+                      });
+                      
+                      function updateButton() {
+                        if (video.muted) {
+                          unmuteButton.innerHTML = '<i class="fas fa-volume-mute"></i> Unmute';
+                        } else {
+                          unmuteButton.innerHTML = '<i class="fas fa-volume-up"></i> Mute';
+                        }
+                      }
+                    });
+                  </script>
+                  
                 <p>Explore our thoughtfully curated collections designed for the modern connoisseur</p>
             </div>
             <div class="category-grid">
